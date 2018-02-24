@@ -79,7 +79,11 @@
     <script>
       function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
-          mapTypeControl: false, 
+          mapTypeControl: true,
+          mapTypeControlOptions: {
+              style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+              position: google.maps.ControlPosition.TOP_LEFT
+          },
           center: {lat: 62.5088264, lng: -94.5386801},
           zoom: 4
         });
@@ -119,9 +123,9 @@
         this.setupPlaceChangedListener(originAutocomplete, 'ORIG');
         this.setupPlaceChangedListener(destinationAutocomplete, 'DEST');
 
-        this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(originInput);
-        this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(destinationInput);
-        this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(modeSelector);
+        this.map.controls[google.maps.ControlPosition.LEFT_TOP].push(modeSelector);
+        this.map.controls[google.maps.ControlPosition.LEFT_TOP].push(originInput);
+        this.map.controls[google.maps.ControlPosition.LEFT_TOP].push(destinationInput);
       }
 
       // Sets a listener on a radio button to change the filter type on Places
