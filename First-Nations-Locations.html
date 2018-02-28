@@ -6,7 +6,6 @@
     <title>First Nations Locations</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
     <style>
       #map {
         height: 100%;
@@ -17,11 +16,9 @@
         margin: 0;
         padding: 0;
       }
-
       .controls {
         margin-top: 10px;
         border: 1px solid transparent;
-        border-radius: 2px 0 0 2px;
         box-sizing: border-box;
         -moz-box-sizing: border-box;
 	      border-radius: 2px;
@@ -75,11 +72,11 @@
 
       <input type="radio" name="type" id="changemode-walking">
       <label for="changemode-walking">Walking</label>
-
     </div>
 
     <div id="map"></div>
-    <script>
+
+    <script>    
       function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
           mapTypeControl: true,
@@ -159,7 +156,6 @@
           }
           me.route();
         });
-
       };
 
       AutocompleteDirectionsHandler.prototype.route = function() {
