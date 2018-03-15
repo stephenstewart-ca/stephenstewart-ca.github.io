@@ -5,4 +5,4 @@ Currently being used to test an app for travel info about First Nations in Canad
 
 First-Nations-Travel.html appears to be a static web page with only one dependency, First-Nations-Travel.kmz, however the HTML file loads fonts, icons, JavaScript libraries, map data, satellite imagery and street views (where available) from Google and uses Google's directions service, while the KMZ file loads a dynamic map overlay from: http://data.aadnc-aandc.gc.ca/geomatics/services/Donnees_Ouvertes-Open_Data/Premiere_Nation_First_Nation/MapServer/KmlServer
 
-To test the prototype click on this link: https://stephenstewart-ca.github.io/First-Nations-Locations.html
+To test the prototype click on this link: https://stephenstewart-ca.github.io
