@@ -1,66 +1,389 @@
-<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
-    <meta name="description" content="splash page">
+    <meta name="description" content="A Google Map App">
     <meta name="author" content="Stephen Stewart">
-    <link rel="icon" href="images/favicon.ico">
+    <link rel="icon" href="">
+    <title>First Nations Travel</title>
 
-    <title>Kwekwecnewtxz</title>
+    <!-- Roboto & Roboto Slab Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i">
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Bungee|Bungee+Outline" rel="stylesheet">
+    <!-- Material Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/2.1.99/css/materialdesignicons.min.css">
 
+    <!-- Bootstrap Framework -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css">
+
+    <!-- Video Player -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/video.js/6.7.4/video-js.min.css">
+
+    <!-- Video Resolution Switcher -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/videojs-resolution-switcher/0.4.2/videojs-resolution-switcher.min.css">
+
+    <!-- Custom Style -->
     <style>
-        body {
-            /* padding-top: 50px; */
-            font-family: 'Lato', sans-serif;
-            font-weight: 700;
-            color: #fff;
-            /* text-shadow: 2px 4px 6px rgba(0, 0, 0, .4); */
-            background-image: url(images/rd-Cane.jpg);
-            background-repeat: no-repeat;
-            /* background-position: center; */
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            background-size: cover;
-            -o-background-size: cover;
-            min-height: 100%;
+
+        /* Global Style */
+        html, body {
             width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 18px;
+        }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Roboto Slab'; }
+
+        /* Fill the window with the map. */
+        #map { height: 100%; }
+
+        /* Navigation Bar Style */
+        #map-app-menu.navbar-default .navbar-header {
+            height: 60px;
+        }
+        #map-app-menu.navbar-default .navbar-brand {
+            color: rgba(255, 255, 255, 1);
+            font-size:24;
+        }
+        #map-app-menu.navbar-default,
+        .dropdown-menu {
+          font-family: 'Roboto', sans-serif;
+          font-weight: 500;
+          font-style: normal;
+          font-size: 18px;
+          border-color: rgba(124,124,124,.65);
+          background-color: rgba(124,124,124,.65);
         }
 
-        h1,
-        h2,
-        h3,
-        h4,
-        h5 {
-            font-family: 'Bungee', cursive;
+        #map-app-menu.navbar-default .dropdown-item:focus,
+        #map-app-menu.navbar-default .dropdown-item:hover,
+        #map-app-menu.navbar-default .dropdown-item.active,
+        #map-app-menu.navbar-default .dropdown-item.active:focus,
+        #map-app-menu.navbar-default .dropdown-item.active:hover {
+          color: rgba(255, 255, 255, 1) !important;
+          text-decoration: none;
+          background-color: transparent;
+          outline: 0;
+        }
+
+        #map-app-menu.navbar-default .navbar-nav>li>a {
+            color: rgba(55, 55, 55, 1);
+            background-color: transparent;
+        }
+        #map-app-menu.navbar-default .navbar-nav>li>a:hover,
+        #map-app-menu.navbar-default .navbar-nav>li>a:focus {
+            color: rgba(255, 255, 255, 1);
+        }
+        #map-app-menu.navbar-default .navbar-nav>.active>a,
+        #map-app-menu.navbar-default .navbar-nav>.active>a:hover,
+        #map-app-menu.navbar-default .navbar-nav>.active>a:focus {
+            color: rgba(255, 255, 255, 1);
+        }
+        #map-app-menu.navbar-default .navbar-toggle {
+            border-color: transparent;
+        }
+        #map-app-menu.navbar-default .navbar-toggle:hover,
+        #map-app-menu.navbar-default .navbar-toggle:focus {
+            background-color: transparent;
+        }
+        #map-app-menu.navbar-default .navbar-toggle {
+            background-color: transparent;
+        }
+
+        /* Use a common style for the travel mode and direction controls. */
+        .controls {
+            margin-top: 10px;
+            border: 1px solid transparent;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            border-radius: 2px;
+            height: 32px;
+            outline: none;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Direction style */
+        #origin-input,
+        #destination-input {
+            background-color: #fff;
+            font-family: 'Roboto', sans-serif;
+            font-size: 15px;
+            font-weight: 300;
+            margin-left: 10px;
+            padding: 0 11px 0 13px;
+            text-overflow: ellipsis;
+            width: 225px;
+        }
+        #origin-input:focus,
+        #destination-input:focus {
+            border-color: #4d90fe;
+        }
+
+        /* Travel mode style */
+        #mode-selector {
             color: #fff;
+            background-color: #4d90fe;
+            margin-left: 10px;
+            padding: 5px 11px 0px 11px;
+            width: 225px;
+            margin-top: 72px; /* push custom controls down below navbar */
+        }
+        #mode-selector label {
+            font-family: 'Roboto', sans-serif;
+            font-size: 13px;
+            font-weight: 300;
+        }
+
+        /* Section Style */
+        #home {
+          min-width: 100%;
+          min-height: 100%;
+          margin: 0;
+          padding: 0;
+          border: 0;
+        }
+
+        #places {
+          width: 100%;
+          min-height: 100%;
+          margin: 0;
+          padding: 0;
+          border: 0;
+          background-image: url(images/salish.png);
+          background-repeat: repeat;
         }
 
     </style>
 </head>
 
 <body>
-    <div class="container-fluid">
-        <div style="margin:80px;">
-            <div>
-                <img src="images/New-Logo-228x300.png" align="left">
-                <h3 style="font-size: 3em; text-align: center;">PROTECT THE LAND.</h3>
-                <h3 style="font-size: 3em; text-align: center;">PROTECT THE WATER.</h3>
-                <h3 style="font-size: 3em; text-align: center;">PROTECT THE CLIMATE.</h3>
+    <nav id="map-app-menu" class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" style="font-family: Roboto Slab; font-weight: 700;" href="#home">
+                  <i class="mdi mdi-24 mdi-feather"></i>&nbsp;First Nations Travel
+                </a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-map-app">
+                  <i class="mdi mdi-24 mdi-menu style="font-size:24px;"" aria-hidden="true" style="color: white;"></i>
+                </button>
             </div>
-            <p style="font-size: 2em">Kwekwecnewtxw</p>
+            <div class="collapse navbar-collapse navbar-map-app">
+                <ul class="nav navbar-nav navbar-left">
+                    <li>
+                      <a href="#home">
+                        <i class="mdi md-24 mdi-google-maps" style="font-size:24px;"></i>&nbsp;Map
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#places">
+                        <i class="mdi mdi-24 mdi-map-marker-multiple" style="font-size:24px;"></i>&nbsp;Places
+                      </a>
+                    </li>
+                    <li class=dropdown>
+                      <a class="dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
+                        <i class="mdi md-24 mdi-forum" style="font-size:24px;"></i>&nbsp;Contact<b class="caret"></b>
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <li>
+                          <a class="dropdown-item" style="font-weight: 500; color: rgba(55, 55, 55, 1);" href="#">
+                          <i class="mdi md-24 mdi-gmail" style="font-size:24px;"></i>&nbsp;Email
+                        </a>
+                      </li>
+                        <li>
+                          <a class="dropdown-item" style="font-weight: 500; color: rgba(55, 55, 55, 1);" href="#">
+                            <i class="mdi md-24 mdi-twitter" style="font-size:24px;"></i>&nbsp;Twitter
+                          </a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" style="font-weight: 500; color: rgba(55, 55, 55, 1);" href="#">
+                            <i class="mdi md-24 mdi-github-circle" style="font-size:24px;"></i>&nbsp;GitHub
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <br><br><br><br>
-        <h1 style="font-size: 6em; text-align: center;">#PROTECTTHEINLET</h1>
-    </div>
-</body>
+    </nav>
 
+    <!-- Home -->
+    <div class="container-fluid" id="home">
+      <!-- Setup the direction controls. -->
+      <input id="origin-input" class="controls" type="text" placeholder="Enter an origin location">
+
+      <input id="destination-input" class="controls" type="text" placeholder="Enter a destination location">
+
+      <!-- Setup the travel mode controls. -->
+      <div id="mode-selector" class="controls">
+          <input type="radio" name="type" id="changemode-driving" checked="checked">
+          <label for="changemode-driving">Driving</label>
+
+          <input type="radio" name="type" id="changemode-transit">
+          <label for="changemode-transit">Transit</label>
+
+          <input type="radio" name="type" id="changemode-walking">
+          <label for="changemode-walking">Walking</label>
+      </div>
+
+      <div id="map"></div>
+    </div>
+
+    <!-- Places -->
+    <div class="container-fluid" id="places"></div>
+
+    <footer>
+        <div class="container"></div>
+    </footer>
+
+    <!-- Modal -->
+    <div></div>
+
+    <!-- ========================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    <!-- jQuery Framework -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <!-- Bootstrap Framework -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+    <!-- Autohiding Navbar Utility -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-autohidingnavbar/1.0.6/jquery.bootstrap-autohidingnavbar.min.js"></script>
+
+    <!-- Autohiding Navbar Activation Script  -->
+    <script>
+        $("nav.navbar-fixed-top").autoHidingNavbar();
+    </script>
+
+    <!-- Get the JavaScript Map API, Places API and Directions Service from Google. -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqVl8F2CLNSrgsJ4jMA4AbGQmj8c7M-EY&libraries=places&callback=initMap"></script>
+
+    <script>
+        /* Set up the map. */
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                mapTypeControl: true,
+                mapTypeControlOptions: {
+                    style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+                    position: google.maps.ControlPosition.LEFT_BOTTOM
+                },
+                center: {
+                    lat: 62.5088264,
+                    lng: -94.5386801
+                },
+                zoom: 4,
+                mapTypeId: 'hybrid'
+            });
+
+            /* Get the KML overlay of First Nation locations. */
+            var ctaLayer = new google.maps.KmlLayer({
+                url: 'https://stephenstewart-ca.github.io/First-Nations-Locations.kmz',
+                map: map
+            });
+
+            new AutocompleteDirectionsHandler(map);
+        }
+
+        /**
+         * @constructor
+         */
+        function AutocompleteDirectionsHandler(map) {
+            this.map = map;
+            this.originPlaceId = null;
+            this.destinationPlaceId = null;
+            this.travelMode = 'WALKING';
+            var originInput = document.getElementById('origin-input');
+            var destinationInput = document.getElementById('destination-input');
+            var modeSelector = document.getElementById('mode-selector');
+            this.directionsService = new google.maps.DirectionsService;
+            this.directionsDisplay = new google.maps.DirectionsRenderer;
+            this.directionsDisplay.setMap(map);
+
+            var originAutocomplete = new google.maps.places.Autocomplete(
+                originInput, {
+                    placeIdOnly: true
+                });
+            var destinationAutocomplete = new google.maps.places.Autocomplete(
+                destinationInput, {
+                    placeIdOnly: true
+                });
+
+            this.setupClickListener('changemode-walking', 'WALKING');
+            this.setupClickListener('changemode-transit', 'TRANSIT');
+            this.setupClickListener('changemode-driving', 'DRIVING');
+
+            this.setupPlaceChangedListener(originAutocomplete, 'ORIG');
+            this.setupPlaceChangedListener(destinationAutocomplete, 'DEST');
+
+            this.map.controls[google.maps.ControlPosition.LEFT_TOP].push(modeSelector);
+            this.map.controls[google.maps.ControlPosition.LEFT_TOP].push(originInput);
+            this.map.controls[google.maps.ControlPosition.LEFT_TOP].push(destinationInput);
+        }
+
+        /* Set up a listener on a radio button to change the filter type on Places Autocomplete. */
+        AutocompleteDirectionsHandler.prototype.setupClickListener = function(id, mode) {
+            var radioButton = document.getElementById(id);
+            var me = this;
+            radioButton.addEventListener('click', function() {
+                me.travelMode = mode;
+                me.route();
+            });
+        };
+
+        AutocompleteDirectionsHandler.prototype.setupPlaceChangedListener = function(autocomplete, mode) {
+            var me = this;
+            autocomplete.bindTo('bounds', this.map);
+            autocomplete.addListener('place_changed', function() {
+                var place = autocomplete.getPlace();
+                if (!place.place_id) {
+                    window.alert("Please select an option from the dropdown list.");
+                    return;
+                }
+                if (mode === 'ORIG') {
+                    me.originPlaceId = place.place_id;
+                } else {
+                    me.destinationPlaceId = place.place_id;
+                }
+                me.route();
+            });
+        };
+
+        AutocompleteDirectionsHandler.prototype.route = function() {
+            if (!this.originPlaceId || !this.destinationPlaceId) {
+                return;
+            }
+            var me = this;
+
+            this.directionsService.route({
+                origin: {
+                    'placeId': this.originPlaceId
+                },
+                destination: {
+                    'placeId': this.destinationPlaceId
+                },
+                travelMode: this.travelMode
+            }, function(response, status) {
+                if (status === 'OK') {
+                    me.directionsDisplay.setDirections(response);
+                } else {
+                    window.alert('Directions request failed due to ' + status);
+                }
+            });
+        };
+
+    </script>
+
+    <!-- Video Player Libraries -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/video.js/6.7.4/video.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/videojs-resolution-switcher/0.4.2/videojs-resolution-switcher.min.css"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/videojs-playLists/0.2.0/videojs-playlists.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/videojs-youtube/2.4.1/Youtube.min.js"></script>
+</body>
 </html>
