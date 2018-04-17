@@ -1,0 +1,12 @@
+/** Pristine Script **/
+@font-face {
+	font-family: 'Pristine-Script';
+	src: url('../fonts/Pristine-Script.eot');
+	src: local('☺'),
+			 url('../fonts/Pristine-Script.otf') format('opentype'),
+			 url('../fonts/Pristine-Script.svg') format('svg'),
+			 url('../fonts/Pristine-Script.ttf') format('truetype'),
+			 url('../fonts/Pristine-Script.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
