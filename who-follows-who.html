@@ -1,0 +1,71 @@
+<html>
+<body>
+<script src="js/jquery.js"></script>
+<script src="js/springy.js"></script>
+<script src="js/springyui.js"></script>
+<script>
+var graph = new Springy.Graph();
+
+var justin = graph.newNode({
+  label: '@JustinTrudeau',
+  ondoubleclick: function() { console.log("Hello!"); }
+});
+var tom = graph.newNode({label: '@tompitfield'});
+var datasciences = graph.newNode({label: '@DataSciences'});
+var canada2020 = graph.newNode({label: '@Canada2020'});
+var anna = graph.newNode({label: '@annamgainey'});
+var phillipe = graph.newNode({label: '@PJ_Desmarais'});
+var gerald = graph.newNode({label: '@gmbutts'});
+var katie = graph.newNode({label: '@telfordk'});
+var france = graph.newNode({label: '@FranceChretienD'});
+var andre = graph.newNode({label: '@Andre_Desmarais'});
+
+graph.newEdge(justin, tom, {color: '#000000'});
+graph.newEdge(tom, justin, {color: '#000000'});
+graph.newEdge(tom, gerald, {color: '#000000'});
+graph.newEdge(tom, phillipe, {color: '#000000'});
+graph.newEdge(phillipe, tom, {color: '#000000'});
+graph.newEdge(phillipe, justin, {color: '#000000'});
+graph.newEdge(phillipe, gerald, {color: '#000000'});
+graph.newEdge(phillipe, france, {color: '#000000'});
+graph.newEdge(phillipe, andre, {color: '#000000'});
+graph.newEdge(phillipe, datasciences, {color: '#000000'});
+graph.newEdge(datasciences, justin, {color: '#000000'});
+graph.newEdge(datasciences, phillipe, {color: '#000000'});
+graph.newEdge(datasciences, france, {color: '#000000'});
+graph.newEdge(datasciences, andre, {color: '#000000'});
+graph.newEdge(datasciences, gerald, {color: '#000000'});
+graph.newEdge(datasciences, katie, {color: '#000000'});
+graph.newEdge(gerald, justin, {color: '#000000'});
+graph.newEdge(gerald, anna, {color: '#000000'});
+graph.newEdge(anna, justin, {color: '#000000'});
+graph.newEdge(anna, phillipe, {color: '#000000'});
+graph.newEdge(katie, canada2020, {color: '#000000'});
+graph.newEdge(katie, gerald, {color: '#000000'});
+graph.newEdge(katie, justin, {color: '#000000'});
+graph.newEdge(france, justin, {color: '#000000'});
+graph.newEdge(france, tom, {color: '#000000'});
+graph.newEdge(france, canada2020, {color: '#000000'});
+graph.newEdge(france, anna, {color: '#000000'});
+graph.newEdge(france, katie, {color: '#000000'});
+graph.newEdge(france, gerald, {color: '#000000'});
+graph.newEdge(france, phillipe, {color: '#000000'});
+graph.newEdge(france, andre, {color: '#000000'});
+graph.newEdge(andre, france, {color: '#000000'});
+graph.newEdge(andre, phillipe, {color: '#000000'});
+graph.newEdge(andre, gerald, {color: '#000000'});
+graph.newEdge(andre, anna, {color: '#000000'});
+
+jQuery(function(){
+  var springy = window.springy = jQuery('#who-follows-who').springy({
+    graph: graph,
+    nodeSelected: function(node){
+      console.log('Node selected: ' + JSON.stringify(node.data));
+    }
+  });
+});
+</script>
+
+<canvas id="who-follows-who" width="1000" height="800" />
+</body>
+</html>
