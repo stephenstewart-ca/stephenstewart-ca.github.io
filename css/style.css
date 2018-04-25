@@ -1,0 +1,272 @@
+/* -- Base -- */
+html,body{
+	width:100%;
+	height:100%;
+	background:#111;
+}
+html{
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+body{
+	font-family: 'NeueMontreal', sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 100%;
+}
+canvas{
+  display:block;
+  vertical-align:bottom;
+}
+h1 {
+	vertical-align: middle;
+	margin-bottom: 30px;
+}
+h2, h3, h4, h5, h6 {
+	font-family: 'NeueMontreal', sans-serif;
+	font-weight: 700;
+	font-style: normal;
+}
+
+h2.section-title {
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+p { font-size: 18px; }
+
+/* -- Navbar -- */
+.navbar-default,
+.dropdown-menu {
+	margin-bottom: 20px;
+	font-family: 'NeueMontreal', sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	border-color: rgba(124,124,124,.65);
+	background-color: rgba(124,124,124,.65) !important;
+}
+.dropdown-item:focus,
+.dropdown-item:hover,
+.dropdown-item.active,
+.dropdown-item.active:focus,
+.dropdown-item.active:hover {
+	color: #fff;
+	text-decoration: none;
+	background-color: transparent !important;
+	outline: 0;
+}
+
+/* -- Rules for sizing the icon. -- */
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+/* -- Rules for using icons as black on a light background. -- */
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+
+/* -- particles.js container --- */
+#home{
+  width: 100%;
+  height: 100%;
+  background-color: #244973;
+  background-image: url('');
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+/* -- Title -- */
+.calligraphy {
+	font-family:'Pristine-Script', Sans-Serif;
+	width:320px;
+	height:80px;
+	margin:10px auto;
+	text-align:left;
+	padding:12px;
+}
+.shadow {
+	text-shadow:
+	0px 1px 0px #999,
+	0px 2px 0px #888,
+	0px 3px 0px #777,
+	0px 4px 0px #666,
+	0px 5px 0px #555,
+	0px 6px 0px #444,
+	0px 7px 0px #333,
+	0px 8px 7px #001135;
+}
+#input {
+	display: inline-block;
+	font-size: 72px;
+	color: white;
+}
+
+/* -- Buttons -- */
+.button-empty {
+	-webkit-border-radius: 30;
+	-moz-border-radius: 30;
+	border-radius: 30px;
+	font-family: 'NeueMontreal', sans-serif;
+	font-weight: 500;
+	font-style: normal;
+	color: white;
+	font-size: 18px;
+	background: none;
+	border: solid white 2px;
+	text-decoration: none;
+	padding: 15px 30px;
+}
+@media screen and (max-width: 63.9375em) {
+	.button-empty {
+		font-size: 16px;
+	}
+}
+.button-empty:hover, .button-empty:active, .button-empty:focus {
+	background: white;
+	color: #244973;
+	text-decoration: none;
+}
+
+/* -- Hero -- */
+.hero {
+	position: relative;
+	width: 100%;
+	/*overflow: hidden; */
+	background-size: cover;
+	background-position: center center;
+	z-index: 1;
+	background: #244973;
+	/* Old browsers */
+	background: -moz-linear-gradient(-45deg, #244973 0%, #204696 100%);
+	/* FF3.6-15 */
+	background: -webkit-linear-gradient(-45deg, #244973 0%, #204696 100%);
+	/* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(135deg, #244973 0%, #204696 100%);
+	/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#244973', endColorstr='#204696',GradientType=1 );
+	/* IE6-9 fallback on horizontal gradient */
+}
+.hero-content {
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	color: #f9f1e9;
+	text-align: center;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate3d(-50%, -50%, 0);
+	transform: translate3d(-50%, -50%, 0);
+}
+.hero-content h3 {
+	font-size: 28px;
+	color: rgba(255, 255, 255, 0.8);
+	font-family: 'NeueMontreal', sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	margin-bottom: 30px;
+}
+
+/* Video Blog */
+#vlog {
+	width: 100%;
+	min-height: 100%;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background-image: url(../images/salish.png);
+	background-repeat: repeat;
+}
+.quote {
+	font-family: 'NeueMontreal', sans-serif;
+	font-weight: 700;
+	font-style: italic;
+	color: #204696;
+}
+.blog {
+	font-family: 'NeueMontreal', sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 16px;
+	color: #000000;
+}
+.illustration {
+	font-family: 'NeueMontreal', sans-serif;
+	font-weight: 700;
+	font-style: normal;
+	font-size: 16px;
+	color: #000000;
+}
+
+/* video.js section */
+/* Embedded vjs-default-skin overrides */
+/* Show the controls (hidden at the start by default) */
+.video-js .vjs-control-bar {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+.video-js {
+	margin: 40px auto;
+	/* The base font size controls the size of everything, not just text. */
+	font-size: 10px;
+	/* The main font color changes the ICON COLORS as well as the text */
+	color: #fff;
+}
+.video-js .vjs-big-play-button {
+	/* The font size is what makes the big play button...big. */
+	font-size: 8em !important;
+	/* 1.5em = 45px default */
+	line-height: 1.5em;
+	height: 1.5em;
+	width: 3em;
+	/* 0.06666em = 2px default */
+	border: 0 !important;
+	/* 0.3em = 9px default */
+	border-radius: 0.3em;
+	/* Align center */
+	left: 50% !important;
+	top: 50% !important;
+	margin-left: -1.5em;
+	margin-top: -0.75em;
+	/* IE8 - has no alpha support */
+	background-color: #2B333F;
+	/* Opacity: 1.0 = 100%, 0.0 = 0% */
+	background-color: rgba(43, 51, 63, 0.7);
+	background-color: transparent !important;
+}
+.video-js:hover .vjs-big-play-button {
+	background-color: transparent !important;
+}
+
+/* Table */
+table {
+		margin-top: 10px;
+		border: 1px solid transparent;
+		box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		height: 40px;
+		outline: none;
+		box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3) !important;
+		border-color: rgba(124, 124, 124, 1) !important;
+		background: #204696 !important;
+		color: rgba(255, 255, 255, 1);
+		margin: 72px auto;
+		font-size: 18px;
+}
+th {
+		color: #fff;
+		background: transparent;
+}
+tbody tr:hover {
+		background: transparent;
+}
+.table-nonfluid {
+		width: auto !important;
+}
