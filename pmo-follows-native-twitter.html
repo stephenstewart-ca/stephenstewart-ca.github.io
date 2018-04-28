@@ -1,0 +1,65 @@
+<html>
+<body>
+<script src="js/jquery.js"></script>
+<script src="js/springy.js"></script>
+<script src="js/springyui.js"></script>
+<script>
+var graph = new Springy.Graph();
+
+var gerald = graph.newNode({
+  label: '@gmbutts',
+  ondoubleclick: function() { console.log("Hello!"); }
+});
+var chelsea = graph.newNode({label: '@apihtawikosisan'});
+var cindy = graph.newNode({label: '@cblackst'});
+var fancy = graph.newNode({label: '@FancyBebamikawe'});
+var nativekat = graph.newNode({label: '@powhatannative'});
+var aura = graph.newNode({label: '@Blightyboo'});
+var alicia = graph.newNode({label: '@WordsandGuitar'});
+var murray = graph.newNode({label: '@SenSincmurr'});
+var hayden = graph.newNode({label: '@Hayden_King'});
+var jesse = graph.newNode({label: '@jessewente'});
+var robert = graph.newNode({label: '@rjjago'});
+var max = graph.newNode({label: '@MaxFineDay'});
+var michael = graph.newNode({label: '@Clerk_GC'});
+var jointops = graph.newNode({label: '@CFOperations'});
+var corrections = graph.newNode({label: '@CSC_SCC_en'});
+var publicsafety = graph.newNode({label: '@Safety_Canada'});
+var cse = graph.newNode({label: '@cse_cst'});
+var csis = graph.newNode({label: '@csiscanada'});
+var rcmp = graph.newNode({label: '@rcmpgrcpolice'});
+var GovCanIndigenous = graph.newNode({label: '@GCIndigenous'});
+
+graph.newEdge(gerald, chelsea, {color: '#000000'});
+graph.newEdge(gerald, cindy, {color: '#000000'});
+graph.newEdge(gerald, fancy, {color: '#000000'});
+graph.newEdge(gerald, nativekat, {color: '#000000'});
+graph.newEdge(gerald, aura, {color: '#000000'});
+graph.newEdge(gerald, alicia, {color: '#000000'});
+graph.newEdge(gerald, murray, {color: '#000000'});
+graph.newEdge(gerald, hayden, {color: '#000000'});
+graph.newEdge(gerald, jesse, {color: '#000000'});
+graph.newEdge(gerald, robert, {color: '#000000'});
+graph.newEdge(gerald, max, {color: '#000000'});
+graph.newEdge(gerald, michael, {color: '#000000'});
+graph.newEdge(michael, jointops, {color: '#000000'});
+graph.newEdge(michael, corrections, {color: '#000000'});
+graph.newEdge(michael, publicsafety, {color: '#000000'});
+graph.newEdge(michael, cse, {color: '#000000'});
+graph.newEdge(michael, csis, {color: '#000000'});
+graph.newEdge(michael, rcmp, {color: '#000000'});
+graph.newEdge(michael, GovCanIndigenous, {color: '#000000'});
+
+jQuery(function(){
+  var springy = window.springy = jQuery('#who-follows-who').springy({
+    graph: graph,
+    nodeSelected: function(node){
+      console.log('Node selected: ' + JSON.stringify(node.data));
+    }
+  });
+});
+</script>
+
+<canvas id="who-follows-who" width="1000" height="800" />
+</body>
+</html>
