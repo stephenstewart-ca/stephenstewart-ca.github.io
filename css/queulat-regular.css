@@ -1,0 +1,12 @@
+/**  **/
+@font-face {
+	font-family: 'Queulat';
+	src: url('../fonts/Queulat-Regular.eot');
+	src: local('☺'),
+		url('../fonts/Queulat-Regular.otf') format('opentype'),
+		url('../fonts/Queulat-Regular.woff') format('woff'),
+		url('../fonts/Queulat-Regular.ttf') format('truetype'),
+		url('../fonts/Queulat-Regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
