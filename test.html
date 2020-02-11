@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="test">
+  <meta name="author" content="Stephen Stewart">
+  <link rel="icon" href="images/favicon.png">
+  <title>Community Owned Social Media</title>
+  <!-- HTML% Reset -->
+  <link rel="stylesheet" media="screen" href="css/reset.css">
+  <!-- Latina Font -->
+  <link rel="stylesheet" href="css/latina-essential.css">
+  <!-- Queulat Font -->
+  <link rel="stylesheet" href="css/queulat-regular.css">
+  <!-- Miss-Robertson Script -->
+  <link rel="stylesheet" href="css/Miss-Robertson.css">
+  <!-- Miss-Robertson Script -->
+  <link rel="stylesheet" href="css/Mrs-Blackfort.css">
+  <!-- Material Icons -->
+  <link rel="stylesheet" href="css/materialdesignicons.css">
+  <!-- Bootstrap Framework -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+
+  <style type="text/css">
+    /* -- Base -- */
+    html,body {
+	    width:100%;
+	    height:100%;
+	    background:#111;
+    }
+    html {
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+    body {
+	    font-family: '', sans-serif;
+      font-weight: 100;
+      font-style: normal;
+      font-size: 100%;
+    }
+    canvas {
+      display:block;
+      vertical-align:bottom;
+    }
+    h1 {
+	    vertical-align: middle;
+	    margin-bottom: 30px;
+    }
+    h2, h3, h4, h5, h6 {
+	    font-family: 'Latina', sans-serif;
+	    font-weight: 700;
+	    font-style: normal;
+    }
+    h2.section-title {
+	    margin-top: 0;
+	    margin-bottom: 0;
+	    padding-bottom: 0;
+    }
+    p { font-size: 18px; }
+
+    /* -- Navbar -- */
+    .navbar-default,
+    .dropdown-menu {
+	    margin-bottom: 20px;
+	    font-family: 'Latina', sans-serif;
+	    font-weight: 100;
+	    font-style: normal;
+	    border-color: rgba(124,124,124,.65);
+	    background-color: rgba(124,124,124,.65) !important;
+    }
+    .dropdown-item:focus,
+    .dropdown-item:hover,
+    .dropdown-item.active,
+    .dropdown-item.active:focus,
+    .dropdown-item.active:hover {
+	     color: #fff;
+	     text-decoration: none;
+	     background-color: transparent !important;
+	     outline: 0;
+    }
+
+     /* -- Rules for sizing the icon. -- */
+    .material-icons.md-18 { font-size: 18px; }
+    .material-icons.md-24 { font-size: 24px; }
+    .material-icons.md-36 { font-size: 36px; }
+    .material-icons.md-48 { font-size: 48px; }
+
+    /* -- Rules for using icons as black on a light background. -- */
+    .material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+    .material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+    /* Rules for using icons as white on a dark background. */
+    .material-icons.md-light { color: rgba(255, 255, 255, 1); }
+    .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+
+    /* -- particles.js container --- */
+    #home{
+      width: 100%;
+      height: 100%;
+      background-color: #244973;
+      background-image: url('');
+      background-size: cover;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+    }
+
+    /* -- Title -- */
+    .calligraphy {
+      font-family:'MissRobertson', Sans-Serif;
+      width:525px;
+	    height:75px;
+	    margin:20px; auto;
+	    text-align:left;
+	    padding:20px;
+    }
+
+    #input {
+      display: inline-block;
+	    font-size: 72px;
+	    color: white;
+    }
+
+    /* -- Buttons -- */
+    .button-empty {
+	    -webkit-border-radius: 30;
+	    -moz-border-radius: 30;
+	    border-radius: 30px;
+	    font-family: 'Latina', sans-serif;
+	    font-weight: 700;
+	    font-style: normal;
+	    color: white;
+	    font-size: 18px;
+	    background: none;
+	    border: solid white 2px;
+	    text-decoration: none;
+	    padding: 15px 30px;
+    }
+    @media screen and (max-width: 63.9375em) {
+	    .button-empty {
+		    font-size: 16px;
+      }
+    }
+    .button-empty:hover, .button-empty:active, .button-empty:focus {
+	    background: white;
+	    color: #244973;
+	    text-decoration: none;
+    }
+
+    /* -- Hero -- */
+    .hero {
+	    position: relative;
+	    width: 100%;
+	    /*overflow: hidden; */
+	    background-size: cover;
+	    background-position: center center;
+	    z-index: 1;
+	    background: #244973;
+	    /* Old browsers */
+	    background: -moz-linear-gradient(-45deg, #244973 0%, #204696 100%);
+	    /* FF3.6-15 */
+	    background: -webkit-linear-gradient(-45deg, #244973 0%, #204696 100%);
+	    /* Chrome10-25,Safari5.1-6 */
+	    background: linear-gradient(135deg, #244973 0%, #204696 100%);
+	    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#244973', endColorstr='#204696',GradientType=1 );
+	    /* IE6-9 fallback on horizontal gradient */
+    }
+    .hero-content {
+	    position: absolute;
+	    margin: 0;
+	    padding: 10px;
+	    color: #f9f1e9;
+	    text-align: center;
+	    top: 50%;
+	    left: 50%;
+	    -webkit-transform: translate3d(-50%, -50%, 0);
+	    transform: translate3d(-50%, -50%, 0);
+    }
+    .hero-content {
+	    font-size: 28px;
+	    color: white;
+	    font-family: 'Queulat';
+	    margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="" id="navbar-header">
+      <ul class="nav navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" style="color: #fff; text-decoration: none;" href="#home">
+            <i class="mdi mdi-18px mdi-home-outline" style="color: #fff; text-decoration: none;">&nbsp;</i>Home
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="color: #fff; text-decoration: none;" href="#vlog">
+            <i class="mdi mdi-18px mdi-chart-line-variant" style="color: #fff; text-decoration: none;">&nbsp;</i>Analysis
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" style="color: #fff; text-decoration: none;" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
+            <i class="mdi mdi-18px mdi-forum-outline" style="color: #fff; text-decoration: none;">&nbsp;</i>Contact
+          </a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" style="color: #fff; text-decoration: none;" href="mailto:info@stephenstewart.ca" target="_blank">
+              <i class="mdi mdi-18px mdi-gmail" style="color: #fff; text-decoration: none;">&nbsp;</i>Email
+            </a>
+            <a class="dropdown-item" style="color: #fff; text-decoration: none;" href="https://twitter.com/stewartetcie" target="_blank">
+              <i class="mdi mdi-18px mdi-twitter" style="color: #fff; text-decoration: none;">&nbsp;</i>Twitter
+            </a>
+            <a class="dropdown-item" style="color: #fff; text-decoration: none;" href="https://github.com/stephenstewart-ca/stephenstewart-ca.github.io"  target="_blank">
+              <i class="mdi mdi-18px mdi-github-circle" style="color: #fff; text-decoration: none;">&nbsp;</i>GitHub
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav> <!-- /navbar -->
+  <!-- particles.js container -->
+  <div id="home">
+    <div class="hero-content">
+      <div class="calligraphy">
+        <h1><span id="input"></span></h1>
+      </div>
+      <center>programmer and data analyst</center><br>
+      <a href="" class="button button-empty">Learn what we can do.</a>
+    </div> <!-- /hero-content   -->
+  </div>
+  <!-- scripts -->
+  <!-- jQuery Framework -->
+  <script src="js/jquery.min.js"></script>
+  <!-- Script to activate jQuery -->
+  <script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+  </script>
+  <!-- Bootstrap Framework -->
+  <script src="js/bootstrap.min.js"></script>
+  <!-- Autohiding Navbar Utility -->
+  <script src="js/jquery.bootstrap-autohidingnavbar.js"></script>
+  <!-- Autohiding Navbar Activation Script  -->
+  <script>
+      $("nav.navbar-fixed-top").autoHidingNavbar();
+  </script>
+  <!-- Particles -->
+  <script src="js/particles.min.js"></script>
+  <script>
+    particlesJS.load('home', 'particles.json', function() {
+      console.log('particles.js loaded - callback');
+    });
+  </script>
+  <!-- Animated Calligraphy -->
+  <script type="text/javascript" src="js/typeit.min.js"></script>
+  <script>
+    <!-- TypeIt Logo -->
+    new TypeIt('#input', {
+      speed: 125,
+      cursor: false,
+      strings: 'Stephen Stewart'
+    });
+  </script>
+</body>
+</html>
