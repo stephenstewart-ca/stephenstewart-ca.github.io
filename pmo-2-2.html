@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="Stephen Stewart">
+    <link rel="icon" href="images/feather.png">
+    <title>PMO Follows Native Twitter</title>
+
+    <!-- Bootstrap  Framework -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/cover-negative.css" rel="stylesheet">
+
+    <!-- Special Edition Free Font Licenses from latinotype.com -->
+    <!-- Latina Essential Sans Serif Body Font -->
+    <link rel="stylesheet" href="css/latina-essential.css">
+    <!-- Queulat Regular Serif Sidebar Font -->
+    <link rel="stylesheet" href="css/queulat-regular.css">
+    <!-- Material Icons, Community Edition -->
+    <link rel="stylesheet" href="css/materialdesignicons.css">
+
+    <style type="text/css">
+        body {
+            font-family: 'Latina', sans-serif;
+            font-weight: 200;
+            font-style: normal;
+        }
+        
+        h1 {
+            font-family: 'Latina', sans-serif;
+            font-weight: 900;
+            font-style: normal;
+        }
+        
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Latina', sans-serif;
+            font-weight: 700;
+            font-style: normal;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="site-wrapper">
+        <div class="site-wrapper-inner">
+            <div class="cover-container">
+                <div class="masthead clearfix">
+                    <div class="inner">
+                        <h3 class="masthead-brand">PMO Follows Native Twitter</h3><br>
+                        <nav class="nav nav-masthead">
+                            <a class="nav-link" href="pmo-2-follows-native-twitter.html">Personal</a>
+                            <a class="nav-link active" href="#">Official</a>
+                    <!--    <a class="nav-link" href="#">Treaties</a> -->
+                        </nav>
+                    </div>
+                </div>
+
+                <div>
+                    <canvas id="who-follows-who" width="1000" height="800"></canvas>
+                </div>
+
+                <div class="inner cover">
+                    <h1 class="cover-heading">
+                        <a href="https://twitter.com/PrivyCouncilCA">PMO Staff</a></h1>
+                    
+                    <p class="lead" style="font-family: Queulat;">
+                       Every Native tweet that  
+                       <a href="https://twitter.com/RickTheis">@RickTheis</a>, former Chief of Staff of
+                       <a href="https://twitter.com/GCIndigenous">@GCIndigenous</a>, retweets appears in the timeline of 
+                       <a href="https://twitter.com/MarciSurkes">@MarciSurkes</a>, former Chief of Staff of 
+                       <a href="https://twitter.com/Safety_Canada">@Safety_Canada</a>. 
+                       Anything that she retweets appears in the timeline of   
+                       <a href="https://twitter.com/C_Blewett">@C_Blewett</a>, the personal account of
+                       <a href="https://twitter.com/DeputyClerk_GC">@DeputyClerk_GC</a>.
+                    </p>
+                    <p class="lead">
+                        <a href="pmo-2-follows-native-twitter.html" class="btn btn-lg btn-secondary">Learn more</a>
+                    </p>
+                </div>
+
+                <div class="mastfoot">
+                    <div class="inner">
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =================================================  -->
+    <!-- JavaScript placed at the end so pages load faster  -->
+    <script src="js/jquery.min.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+    </script>
+    <!-- This template requires tether.io's tether.js and doesn't support IE8 -->
+    <script src="js/tether.js"></script>
+    <script src="js/bootstrap.min.js "></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js "></script>
+
+    <! -- Directed Force Graph -->
+    <script src="js/springy.js "></script>
+    <script src="js/springyui.js "></script>
+    <script>
+        var graph = new Springy.Graph();
+
+        var rick = graph.newNode({
+            label: '@RickTheis',
+            ondoubleclick: function() { console.log("Hello!"); }
+        });
+        
+        var catherine = graph.newNode({label: '@C_Blewett'});
+        var marci = graph.newNode({label: '@MarciSurkes'});
+        var ubcic = graph.newNode({label: '@UBCIC'});
+        var whitefish = graph.newNode({label: '@WRFNinfo'}); 
+        var froglake = graph.newNode({label: '@FrogLakeFN'});
+        var snuneymuxw = graph.newNode({label: '@Snuneymuxw'});        
+        var coastal = graph.newNode({label: '@CFNGBI'});
+        var fish = graph.newNode({label: '@FNFish'});
+        var nisgaa = graph.newNode({label: '@NLGNisgaaNation'});
+        var toquaht = graph.newNode({label: '@ToquahtNation'});
+        var finance = graph.newNode({label: '@FNFMB'});           
+        var education = graph.newNode({label: '@FNESC'});
+        var health = graph.newNode({label: '@fnha'});
+        var yinkadene = graph.newNode({label: '@YinkaDeneA5'});
+        var tsleilwaututh = graph.newNode({label: '@tsleilwaututh'});
+        var ahousaht = graph.newNode({label: '@Ahousaht'});
+        var summit = graph.newNode({label: '@FNSummit'});
+        var naps = graph.newNode({label: '@NAPS_Police'});
+        var itk = graph.newNode({label: '@ITK_CanadaInuit'});         
+        var mikmaqpei = graph.newNode({label: '@mikmaqPEI'});
+        var elsipogtog = graph.newNode({label: '@ElsipogtogBand'});    
+        var fortmckay = graph.newNode({label: '@FortMcKay'});
+        var qajuqturvik = graph.newNode({label: '@Qajuqturvik'});
+        var tunngavik = graph.newNode({label: '@NTunngavik'});
+        var aiai = graph.newNode({label: '@AIAI_Comms'});
+        var nwac = graph.newNode({label: '@NWAC_CA'});      
+        var bcafn = graph.newNode({label: '@BCAFN'});
+        var nafc = graph.newNode({label: '@NAFC_ANCA'});     
+        var food = graph.newNode({label: '@foodbankscanada'});
+        
+        graph.newEdge(catherine, marci, {color: '#CC333F'});
+        graph.newEdge(marci, rick, {color: '#CC333F'});
+        graph.newEdge(rick, ubcic, {color: '#244973'});
+        graph.newEdge(rick, whitefish, {color: '#244973'});
+        graph.newEdge(rick, froglake, {color: '#244973'});
+        graph.newEdge(rick, snuneymuxw, {color: '#244973'});  
+        graph.newEdge(rick, coastal, {color: '#244973'});       
+        graph.newEdge(rick, fish, {color: '#244973'});
+        graph.newEdge(rick, nisgaa, {color: '#244973'});
+        graph.newEdge(rick, toquaht, {color: '#244973'});
+        graph.newEdge(rick, finance, {color: '#244973'});       
+        graph.newEdge(rick, education, {color: '#244973'});
+        graph.newEdge(rick, health, {color: '#244973'});
+        graph.newEdge(rick, yinkadene, {color: '#244973'});
+        graph.newEdge(rick, tsleilwaututh, {color: '#244973'});
+        graph.newEdge(rick, ahousaht, {color: '#244973'});
+        graph.newEdge(rick, summit, {color: '#244973'});       
+        graph.newEdge(rick, naps, {color: '#244973'});
+        graph.newEdge(rick, itk, {color: '#244973'});      
+        graph.newEdge(rick, mikmaqpei, {color: '#244973'});
+        graph.newEdge(rick, elsipogtog, {color: '#244973'});       
+        graph.newEdge(rick, fortmckay, {color: '#244973'});
+        graph.newEdge(rick, qajuqturvik, {color: '#244973'});
+        graph.newEdge(rick, tunngavik, {color: '#244973'});
+        graph.newEdge(rick, aiai, {color: '#244973'});
+        graph.newEdge(rick, nwac, {color: '#244973'});
+        graph.newEdge(rick, bcafn, {color: '#244973'});
+        graph.newEdge(rick, nafc, {color: '#244973'});     
+        graph.newEdge(rick, food, {color: '#244973'});   
+
+        jQuery(function() {
+            var springy = window.springy = jQuery('#who-follows-who').springy({
+                graph: graph,
+                nodeSelected: function(node) {
+                    console.log('Node selected: ' + JSON.stringify(node.data));
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
