@@ -27,8 +27,10 @@ Copyright (c) 2010 Dennis Hotson
 
 jQuery.fn.springy = function(params) {
 	var graph = this.graph = params.graph || new Springy.Graph();
-	var nodeFont = "16px Verdana, sans-serif";
-	var edgeFont = "8px Verdana, sans-serif";
+	/* var nodeFont = "16px Verdana, sans-serif"; ss */
+    var nodeFont = "12px Queulat, serif";
+	/* var edgeFont = "8px Verdana, sans-serif"; ss */
+    var edgeFont = "8px Queulat, serif";
 	var stiffness = params.stiffness || 400.0;
 	var repulsion = params.repulsion || 400.0;
 	var damping = params.damping || 0.5;
