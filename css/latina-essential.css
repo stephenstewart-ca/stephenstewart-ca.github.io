@@ -7,24 +7,24 @@
 		url('../fonts/LatinaEssential-Light.otf') format('opentype'),
 		url('../fonts/LatinaEssential-Light.ttf') format('truetype'),
 		url('../fonts/LatinaEssential-Light.svg') format('svg');
-	font-weight: 100;
+	font-weight: 200;
 	font-style: normal;
 }
 
 @font-face {
-	font-family: 'LatinaEssential';
+	font-family: 'Latina';
 	src: url('../fonts/LatinaEssential-LightIt.eot');
 	src: local('☺'),
 		url('../fonts/LatinaEssential-LightIt.woff') format('woff'),
 		url('../fonts/LatinaEssential-LightIt.otf') format('opentype'),
 		url('../fonts/LatinaEssential-LightIt.ttf') format('truetype'),
 		url('../fonts/LatinaEssential-LightIt.svg') format('svg');
-	font-weight: 100l;
+	font-weight: 200;
 	font-style: italic;
 }
 
 @font-face {
-	font-family: 'LatinaEssential';
+	font-family: 'Latina';
 	src: url('../fonts/LatinaEssential-Medium.eot');
 	src: local('☺'),
 		url('../fonts/LatinaEssential-Medium.woff') format('woff'),
@@ -36,7 +36,7 @@
 }
 
 @font-face {
-	font-family: 'LatinaEssential';
+	font-family: 'Latina';
 	src: url('../fonts/LatinaEssential-MediumIt.eot');
 	src: local('☺'),
 		url('../fonts/LatinaEssential-MediumIt.woff') format('woff'),
@@ -48,7 +48,7 @@
 }
 
 @font-face {
-	font-family: 'LatinaEssential';
+	font-family: 'Latina';
 	src: url('../fonts/LatinaEssential-Bold.eot');
 	src: local('☺'),
 		url('../fonts/LatinaEssential-Bold.woff') format('woff'),
@@ -60,7 +60,7 @@
 }
 
 @font-face {
-	font-family: 'LatinaEssential';
+	font-family: 'Latina';
 	src: url('../fonts/LatinaEssential-BoldIt.eot');
 	src: local('☺'),
 		url('../fonts/LatinaEssential-BoldIt.woff') format('woff'),
@@ -72,7 +72,7 @@
 }
 
 @font-face {
-	font-family: 'LatinaEssential';
+	font-family: 'Latina';
 	src: url('../fonts/LatinaEssential-Heavy.eot');
 	src: local('☺'),
 		url('../fonts/LatinaEssential-Heavy.woff') format('woff'),
@@ -84,7 +84,7 @@
 }
 
 @font-face {
-	font-family: 'LatinaEssential';
+	font-family: 'Latina';
 	src: url('../fonts/LatinaEssential-HeavyIt.eot');
 	src: local('☺'),
 		url('../fonts/LatinaEssential-HeavyIt.woff') format('woff'),
