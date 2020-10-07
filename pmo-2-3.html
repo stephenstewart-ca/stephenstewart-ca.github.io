@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="Stephen Stewart">
+    <link rel="icon" href="images/feather.png">
+    <title>PMO Follows Native Twitter</title>
+
+    <!-- Bootstrap  Framework -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/cover-negative.css" rel="stylesheet">
+
+    <!-- Special Edition Free Font Licenses from latinotype.com -->
+    <!-- Latina Essential Sans Serif Body Font -->
+    <link rel="stylesheet" href="css/latina-essential.css">
+    <!-- Queulat Regular Serif Sidebar Font -->
+    <link rel="stylesheet" href="css/queulat-regular.css">
+
+    <!-- Material Icons, Community Edition -->
+    <link rel="stylesheet" href="css/materialdesignicons.css">
+
+    <style type="text/css">
+        body {
+            font-family: 'Latina', sans-serif;
+            font-weight: 200;
+            font-style: normal;
+        }
+        
+        h1 {
+            font-family: 'Latina', sans-serif;
+            font-weight: 900;
+            font-style: normal;
+        }
+        
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Latina', sans-serif;
+            font-weight: 700;
+            font-style: normal;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="site-wrapper">
+        <div class="site-wrapper-inner">
+            <div class="cover-container">
+                <div class="masthead clearfix">
+                    <div class="inner">
+                        <h3 class="masthead-brand" style="color: #CC333F">PMO Follows Native Twitter</h3><br>
+                        <nav class="nav nav-masthead">
+                            <a class="nav-link" href="pmo-2-follows-native-twitter.html">Personal</a>
+                            <a class="nav-link" href="pmo-2-2.html">Official</a>
+                            <a class="nav-link active" href="#">Treaties</a>
+                        </nav>
+                    </div>
+                </div>
+
+                <div>
+                    <canvas id="who-follows-who" width="1000" height="1000"></canvas>
+                </div>
+
+                <div class="inner cover">
+                    <h1 class="cover-heading">
+                        <a href="https://twitter.com/GCIndigenous">Treaties</a></h1>
+                    <p class="lead" style="font-family: Queulat;">
+                        <a href="https://twitter.com/JoeWild_TAG">@JoeWild_TAG</a> is Treaties and Aboriginal Government negotiator for 
+                        <a href="https://twitter.com/GCIndigenous">@GCIndigenous</a>, where 
+                        <a href="#">@RickTheil</a> was the Chief of Staff to the Minister.                     
+                    </p>
+                    <p class="lead" style="font-family: Queulat;">
+                        The term "treaty negotiator" is a misnomer in Canada where, in spite of
+                        Constitutional protection for treaties, official policy is to terminate treaties with First Nations.
+                    </p>
+                    <p class="lead">
+                        <a href="#"  class="btn btn-lg btn-secondary">Learn more</a>
+                    </p>
+                </div>
+
+                <div class="mastfoot">
+                    <div class="inner">
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =================================================  -->
+    <!-- JavaScript placed at the end so pages load faster  -->
+    <script src="js/jquery.min.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+    </script>
+    <!-- This template requires tether.io's tether.js and doesn't support IE8 -->
+    <script src="js/tether.js"></script>
+    <script src="js/bootstrap.min.js "></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js "></script>
+
+    <! -- Directed Force Graph -->
+    <script src="js/springy.js "></script>
+    <script src="js/springyui.js "></script>
+    <script>
+        var graph = new Springy.Graph();
+
+        var joe = graph.newNode({
+            label: '@JoeWild_TAG',
+            ondoubleclick: function() { console.log("Hello!"); }
+        });
+        
+        var catherine = graph.newNode({label: '@C_Blewett'});
+        var marci = graph.newNode({label: '@MarciSurkes'});
+        var rick = graph.newNode({label: '@RickTheis'});
+        var jody = graph.newNode({label: '@Puglaas'});
+        var kim = graph.newNode({label: '@KimCBaird'});
+        var margaret = graph.newNode({label: '@FrohMargaret'});
+        var herb = graph.newNode({label: '@LehrHerb'});
+        var gerald = graph.newNode({label: '@geraldcunning17'});
+        var ryan = graph.newNode({label: '@RMcomedy'});
+        var matthew = graph.newNode({label: '@mcooncome'});   
+        var wade = graph.newNode({label: '@WadeGrant'});
+        var aaron = graph.newNode({label: '@ASumexheltza'});
+        var judith = graph.newNode({label: '@kekinusuqs'});
+        var kupki7 = graph.newNode({label: '@stsmamit'});
+        var doug = graph.newNode({label: '@dougwhite'});
+        var koeye = graph.newNode({label: '@qqsprojects'});
+        var bob1 = graph.newNode({label: '@1Bob_Chamberlin'});
+        var edward = graph.newNode({label: '@AkileChoh'});       
+        var carol = graph.newNode({label: '@Hesquiaht'});
+        var marilyn = graph.newNode({label: '@bellabellabc'});
+        var william = graph.newNode({label: '@WilliamHousty'});
+        var gary = graph.newNode({label: '@HoustyGary'});
+        var jess = graph.newNode({label: '@jesshousty'});        
+        var max = graph.newNode({label: '@MaxFineDay'});
+        var abram = graph.newNode({label: '@AbramBenedict'});
+        var ed = graph.newNode({label: '@Akilechoh1'});
+        var melissa = graph.newNode({label: '@Kahahxstahlas'});  
+        var bob = graph.newNode({label: '@wewap'});
+        var lowa = graph.newNode({label: '@LowaBeebe'});              
+        var leah = graph.newNode({label: '@GWLeah'});
+        var bill = graph.newNode({label: '@billnama'});
+        
+        graph.newEdge(catherine, marci, {color: '#244973'});
+        graph.newEdge(marci, rick, {color: '#244973'});
+        graph.newEdge(rick, joe, {color: '#244973'});        
+        graph.newEdge(joe, jody, {color: '#CC333F'});
+        graph.newEdge(joe, kim, {color: '#CC333F'});  
+        graph.newEdge(joe, margaret, {color: '#CC333F'});       
+        graph.newEdge(joe, herb, {color: '#CC333F'});
+        graph.newEdge(joe, gerald, {color: '#CC333F'});
+        graph.newEdge(joe, ryan, {color: '#CC333F'});
+        graph.newEdge(joe, matthew, {color: '#CC333F'});         
+        graph.newEdge(joe, wade, {color: '#CC333F'});
+        graph.newEdge(joe, aaron, {color: '#CC333F'});
+        graph.newEdge(joe, judith, {color: '#CC333F'});
+        graph.newEdge(joe, kupki7, {color: '#CC333F'});
+        graph.newEdge(joe, doug, {color: '#CC333F'});               
+        graph.newEdge(joe, koeye, {color: '#CC333F'});       
+        graph.newEdge(joe, bob1, {color: '#CC333F'});
+        graph.newEdge(joe, edward, {color: '#CC333F'});
+        graph.newEdge(joe, carol, {color: '#CC333F'});
+        graph.newEdge(joe, marilyn, {color: '#CC333F'});
+        graph.newEdge(joe, william, {color: '#CC333F'});     
+        graph.newEdge(joe, gary, {color: '#CC333F'});
+        graph.newEdge(joe, jess, {color: '#CC333F'});    
+        graph.newEdge(joe, max, {color: '#CC333F'});  
+        graph.newEdge(joe, abram, {color: '#CC333F'});       
+        graph.newEdge(joe, ed, {color: '#CC333F'});
+        graph.newEdge(joe, melissa, {color: '#CC333F'});        
+        graph.newEdge(joe, bob, {color: '#CC333F'});
+        graph.newEdge(joe, lowa, {color: '#CC333F'});             
+        graph.newEdge(joe, leah, {color: '#CC333F'});      
+        graph.newEdge(joe, bill, {color: '#CC333F'});
+
+        jQuery(function() {
+            var springy = window.springy = jQuery('#who-follows-who').springy({
+                graph: graph,
+                nodeSelected: function(node) {
+                    console.log('Node selected: ' + JSON.stringify(node.data));
+                }
+            });
+        });
+    </script>
+</body>
+</html>
