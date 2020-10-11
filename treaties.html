@@ -22,11 +22,14 @@
     <!-- Queulat Regular Serif Sidebar Font -->
     <link rel="stylesheet" href="css/queulat-regular.css">
 
+    <!-- Open Font Licenses -->
+    <!-- Miss Robertson Calligraphy -->
+    <link rel="stylesheet" href="css/Miss-Robertson.css">
     <!-- Material Icons, Community Edition -->
     <link rel="stylesheet" href="css/materialdesignicons.css">
 
     <style type="text/css">
-        html,body {
+        html, body {
             width: 100%;
             height: 100%;
             <!-- background-color: #244973;  -->
@@ -56,6 +59,19 @@
             font-family: 'Latina', sans-serif;
             font-weight: 700;
             font-style: normal;
+        }
+        .calligraphy {
+            font-family:'MissRobertson';
+            width:480px;
+            height:135px;
+            margin:20px; auto;
+            text-align:left;
+            padding:40px;
+        }
+        #input {
+            display: inline-block;
+            font-size: 60px;
+            color: #244973;
         }
     </style>
 </head>
@@ -142,9 +158,12 @@
                         the underlying treaties. Won't someone be bound to ask what happened to the bottom half of 
                         Canada's coat of arms if Constitutional confederates are exterminated?
                     </p>
-                    <p style="font-size: 18px;">
-                        
-                    </p>
+                </div>
+                
+                <div class="masthead clearfix">
+                    <div class="inner">
+                        <h1 class="masthead-brand calligraphy"><span id="input"></span></h1>
+                    </div>
                 </div>
                 
                 <div class="mastfoot">
@@ -168,6 +187,17 @@
     <script src="js/tether.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js "></script>
+    
+    <!-- Animated Calligraphy -->
+    <script type="text/javascript" src="js/typeit.min.js"></script>
+    <script>
+    <!-- TypeIt Logo -->
+    new TypeIt('#input', {
+      speed: 200,
+      cursor: false,
+      strings: 'Stephen Stewart'
+    });
+    </script>
 
 </body>
 </html>
